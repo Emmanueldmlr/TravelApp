@@ -196,7 +196,6 @@ module.exports = {
     'require-await': 'off',
     'require-unicode-regexp': 'off',
     'rest-spread-spacing': 'error',
-    semi: 'error',
     'semi-spacing': 'error',
     'semi-style': ['error', 'last'],
     'sort-keys': 'off',
