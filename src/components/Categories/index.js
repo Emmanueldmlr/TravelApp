@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { FlatList, Text } from 'react-native';
+import { FlatList, Pressable, Text } from 'react-native';
 import { categoryStyles } from './styles';
 
 const CATEGORY_DATA = [
@@ -29,13 +29,23 @@ const Categories = () => {
     const [selectedCategory, setSelectedCategory] = useState('All')
   return (
     <FlatList
-        data={CATEGORY_DATA}
-        renderItem={({ item }) => <Text onPress={() => setSelectedCategory(item.name)} style={[categoryStyles.item, selectedCategory === item.name && categoryStyles.selectedItem]}>{item.name}</Text>}
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        keyExtractor={item => item.id}
+      data={CATEGORY_DATA}
+      renderItem={({ item }) => (
+        <Pressable onPress={() => setSelectedCategory(item.name)}>
+          <Text
+            style={[
+              categoryStyles.item,
+              selectedCategory === item.name && categoryStyles.selectedItem,
+            ]}>
+            {item.name}
+          </Text>
+        </Pressable>
+      )}
+      horizontal
+      showsHorizontalScrollIndicator={false}
+      keyExtractor={item => item.id}
     />
-  )
+  );
 }
 
 export default Categories;
