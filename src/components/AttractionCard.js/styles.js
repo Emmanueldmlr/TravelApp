@@ -4,14 +4,15 @@ const {width} = Dimensions.get('window');
 
 export const attractionCardStyles = StyleSheet.create({
   card: {
-    marginRight: 8,
+    marginRight:10,
     padding: 4,
     borderWidth: 1,
     borderColor: '#E2E2E2',
     borderRadius: 15,
+    marginBottom: 20,
   },
   image: {
-    width: (width - 56) / 2,
+    width: (width - 80) / 2,
     height: 120,
     borderRadius: 15,
   },

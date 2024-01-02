@@ -15,5 +15,6 @@ export const homeStyles = StyleSheet.create({
     flexDirection: 'row',
     marginBottom: 20,
     marginTop: 10,
+    flexWrap: 'wrap',
     },
 });
