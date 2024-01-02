@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { SafeAreaView, ScrollView } from 'react-native';
-import AttractionCard from '../../components/AttractionCard.js';
+import AttractionCard from '../../components/AttractionCard.js/index.js';
 import Categories from '../../components/Categories';
 import Title from '../../components/Title';
 import { homeStyles } from './styles';
