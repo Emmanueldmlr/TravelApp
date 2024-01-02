@@ -29,6 +29,7 @@ const Categories = () => {
     const [selectedCategory, setSelectedCategory] = useState('All')
   return (
     <FlatList
+      style={categoryStyles.container}
       data={CATEGORY_DATA}
       renderItem={({ item }) => (
         <Pressable onPress={() => setSelectedCategory(item.name)}>

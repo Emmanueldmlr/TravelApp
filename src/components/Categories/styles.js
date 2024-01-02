@@ -12,5 +12,8 @@ export const categoryStyles = StyleSheet.create({
     color: '#000',
     borderBottomWidth: 2,
     borderBottomColor: '#4681A3',
-    },
+  },
+  container: {
+    marginRight: -20,
+  }
 });

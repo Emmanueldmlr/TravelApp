@@ -81,8 +81,8 @@ module.exports = {
     'id-match': 'error',
     'implicit-arrow-linebreak': ['error', 'beside'],
     'init-declarations': 'off',
-    'jsx-quotes': ['error', 'prefer-single'],
-    quotes: ['error', 'single', { avoidEscape: true }],
+    // 'jsx-quotes': ['error', 'prefer-single'],
+    // quotes: ['error', 'single', { avoidEscape: true }],
     'key-spacing': 'error',
     'keyword-spacing': [
       'error',
@@ -218,3 +218,5 @@ module.exports = {
     yoda: ['error', 'never'],
   },
 };
+
+
