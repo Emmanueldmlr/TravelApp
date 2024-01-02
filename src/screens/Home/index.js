@@ -7,7 +7,7 @@ import { homeStyles } from './styles';
 import attractionsData from '../../data/attractions.json'
 import categoriesData from '../../data/categories.json'
 
-const Home = () => {
+const Home = ({navigation}) => {
     const [attractions, setAttractions] = useState([])
     const [selectedCategory, setSelectedCategory] = useState('All');
     const [categories, setCategories] = useState([])
@@ -52,6 +52,9 @@ const Home = () => {
               name={attraction.name}
               location={attraction.country}
               key={attraction.id}
+              handler={() =>
+                navigation.navigate('AttractionDetails', {attraction})
+              }
             />
           ))}
         </ScrollView>
