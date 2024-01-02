@@ -9,6 +9,6 @@ export const homeStyles = StyleSheet.create({
         color: '#000',
         fontWeight: 'bold',
         marginTop: 40,
-        marginBottom: 34,
+        marginBottom: 18,
     },
 })
