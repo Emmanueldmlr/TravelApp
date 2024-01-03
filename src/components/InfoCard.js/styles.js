@@ -19,4 +19,8 @@ export const infoCardStyles = StyleSheet.create({
     color: '#000',
     marginHorizontal: 8,
   },
+  icon: {
+    width: 20,
+    height: 20,
+  },
 });

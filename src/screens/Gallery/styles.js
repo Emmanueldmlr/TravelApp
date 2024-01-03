@@ -1,20 +1,22 @@
 import { StyleSheet } from 'react-native';
 
-export const homeStyles = StyleSheet.create({
+export const galleryStyles = StyleSheet.create({
   container: {
     margin: 20,
   },
-  subtitle: {
-    fontSize: 20,
-    color: '#000',
-    fontWeight: 'bold',
-    marginTop: 40,
-    marginBottom: 18,
-  },
-  AttractionContainer: {
-    flexDirection: 'row',
+  image: {
+    width: '100%',
+    height: 400,
+    borderRadius: 20,
     marginBottom: 20,
-    marginTop: 10,
-    flexWrap: 'wrap',
-    },
+  },
+  goBackContainer:{
+    position: 'absolute',
+    top: 40,
+    left: 20,
+  },
+  icon: {
+    width: 40,
+    height: 40,
+  },
 });
