@@ -8,9 +8,9 @@ export const attractionStyle = StyleSheet.create({
   mainImage: {
     width: '100%',
     height: 0.5 * height,
-    flexDirection: "column",
-    justifyContent: "space-between",
-    alignItems: "center",
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   header: {
     flexDirection: 'row',
@@ -30,13 +30,36 @@ export const attractionStyle = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'rgba(255, 255, 255, 0.8)',
     margin: 10,
-    flexWrap: 'wrap', 
+    flexWrap: 'wrap',
     justifyContent: 'center',
   },
   imageThumbnail: {
     width: 30,
     height: 30,
     borderRadius: 10,
-    margin: 8
+    margin: 8,
+  },
+  details: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 20,
+    width: '90%',
+  },
+  location: {
+    fontSize: 30,
+    fontWeight: 'bold',
+    color: '#000',
+  },
+  price: {
+    fontSize: 25,
+    fontWeight: 'bold',
+    color: '#000',
+    marginTop: 10,
+  },
+  country: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#000',
+    marginTop: 10,
   },
 });

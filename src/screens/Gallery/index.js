@@ -1,6 +1,8 @@
 import React from 'react';
 import {SafeAreaView, View} from 'react-native';
-const Gallery = () => {
+const Gallery = ({route}) => {
+  const {images} = route?.params || [];
+  
   return (
     <SafeAreaView>
       <View>
