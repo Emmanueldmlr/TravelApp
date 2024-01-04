@@ -4,6 +4,8 @@ import InfoCard from '../../components/InfoCard.js';
 import { attractionStyle } from './styles';
 import MapView, {Marker} from 'react-native-maps';
 import Share from 'react-native-share';
+import ImgToBase64 from 'react-native-image-base64';
+
 
 const AttractionDetails = ({route, navigation}) => {
   const { attraction } = route?.params || {};
@@ -16,14 +18,21 @@ const AttractionDetails = ({route, navigation}) => {
     navigation.navigate('Gallery', {images: attraction?.images});
   };
 
-  const handleShare = () => {
-    Share.open({message: attraction.name, url: attraction.images[0]})
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        err && console.log(err);
-      })
+  const handleShare = async() => {
+    try{
+      const base64Image = await ImgToBase64.getBase64String(attraction.images[0]);
+      Share.open({message: attraction.name, url: `data:image/png;base64,${base64Image}`})
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => {
+          err && console.log(err);
+        })
+    }
+    catch(err){
+      console.log(err)
+    }
+
   }
 
   return (
