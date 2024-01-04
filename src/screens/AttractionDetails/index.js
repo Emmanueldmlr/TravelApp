@@ -69,7 +69,9 @@ const AttractionDetails = ({route, navigation}) => {
         </View>
       </ImageBackground>
       <View style={attractionStyle.details}>
-        <Text style={attractionStyle.location}>{attraction?.name}</Text>
+        <TouchableOpacity onPress={viewGallery}>
+          <Text style={attractionStyle.location}>{attraction?.name}</Text>
+        </TouchableOpacity>
         <Text style={attractionStyle.price}>{attraction?.entry_price}</Text>
       </View>
       <Text style={attractionStyle.country}>{attraction?.country}</Text>
@@ -82,10 +84,18 @@ const AttractionDetails = ({route, navigation}) => {
 ${attraction?.opening_time} - ${attraction?.closing_time}`}
         image={require('../../assets/schedule.png')}
       />
-      <MapView  style={attractionStyle.map} initialRegion={coordinates}>
+      <MapView style={attractionStyle.map} initialRegion={coordinates}>
         <Marker coordinate={coordinates} title={attraction.name} />
       </MapView>
-      <TouchableOpacity style={attractionStyle.button} onPress={() => navigation.navigate('Map', {coordinates, name: attraction.name, country: attraction.country})}>
+      <TouchableOpacity
+        style={attractionStyle.button}
+        onPress={() =>
+          navigation.navigate('Map', {
+            coordinates,
+            name: attraction.name,
+            country: attraction.country,
+          })
+        }>
         <Text style={attractionStyle.buttonText}>View on Map</Text>
       </TouchableOpacity>
     </ScrollView>
