@@ -66,8 +66,6 @@ ${attraction?.opening_time} - ${attraction?.closing_time}`}
         initialRegion={{
           latitude: attraction.coordinates.lat,
           longitude: attraction.coordinates.lon,
-          latitudeDelta: 0.0922,
-          longitudeDelta: 0.0421,
         }}
       />
     </ScrollView>
