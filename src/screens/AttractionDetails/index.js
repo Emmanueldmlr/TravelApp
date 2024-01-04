@@ -62,7 +62,7 @@ const AttractionDetails = ({route, navigation}) => {
 ${attraction?.opening_time} - ${attraction?.closing_time}`}
         image={require('../../assets/schedule.png')}
       />
-      <MapView style={attractionStyle.map} initialRegion={coordinates}>
+      <MapView  style={attractionStyle.map} initialRegion={coordinates}>
         <Marker coordinate={coordinates} title={attraction.name} />
       </MapView>
       <TouchableOpacity style={attractionStyle.button} onPress={() => navigation.navigate('Map', {coordinates, name: attraction.name, country: attraction.country})}>

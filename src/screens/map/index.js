@@ -8,7 +8,7 @@ const Map = ({route, navigation}) => {
 
   return (
     <View style={mapStyles.container}>
-      <MapView style={mapStyles.map} initialRegion={coordinates}>
+      <MapView style={mapStyles.map} initialRegion={coordinates} >
         <Marker coordinate={coordinates} title={name} />
       </MapView>
       <View style={mapStyles.backContainer}>
@@ -19,7 +19,7 @@ const Map = ({route, navigation}) => {
       </View>
     </View>
   );
-  
+
 };
 
 export default Map;
