@@ -1,15 +1,16 @@
 import React, {useState} from 'react';
 import { SafeAreaView, ImageBackground, Image, View, Pressable, Text, ScrollView } from 'react-native';
 import InfoCard from '../../components/InfoCard.js';
-import Title from '../../components/Title';
 import { attractionStyle } from './styles';
-import MapView from 'react-native-maps';
+import MapView, {Marker} from 'react-native-maps';
 
 const AttractionDetails = ({route, navigation}) => {
   const { attraction } = route?.params || {};
   const [mainImage, setMainImage] = useState(attraction?.images[0]);
-  
-
+  const coordinates = {
+    latitude: attraction.coordinates.lat,
+    longitude: attraction.coordinates.lon,
+  };
   const viewGallery = () => {
     navigation.navigate('Gallery', {images: attraction?.images});
   };
@@ -61,13 +62,9 @@ const AttractionDetails = ({route, navigation}) => {
 ${attraction?.opening_time} - ${attraction?.closing_time}`}
         image={require('../../assets/schedule.png')}
       />
-      <MapView
-        style={attractionStyle.map}
-        initialRegion={{
-          latitude: attraction.coordinates.lat,
-          longitude: attraction.coordinates.lon,
-        }}
-      />
+      <MapView style={attractionStyle.map} initialRegion={coordinates}>
+        <Marker coordinate={coordinates} title={attraction.name} />
+      </MapView>
     </ScrollView>
   );
 };
