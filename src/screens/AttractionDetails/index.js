@@ -3,6 +3,7 @@ import { SafeAreaView, ImageBackground, Image, View, Pressable, Text, ScrollView
 import InfoCard from '../../components/InfoCard.js';
 import { attractionStyle } from './styles';
 import MapView, {Marker} from 'react-native-maps';
+import Share from 'react-native-share';
 
 const AttractionDetails = ({route, navigation}) => {
   const { attraction } = route?.params || {};
@@ -14,6 +15,16 @@ const AttractionDetails = ({route, navigation}) => {
   const viewGallery = () => {
     navigation.navigate('Gallery', {images: attraction?.images});
   };
+
+  const handleShare = () => {
+    Share.open({message: attraction.name, url: attraction.images[0]})
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        err && console.log(err);
+      })
+  }
 
   return (
     <ScrollView
@@ -30,7 +41,7 @@ const AttractionDetails = ({route, navigation}) => {
               style={attractionStyle.icon}
             />
           </Pressable>
-          <Pressable hitSlop={8} onPress={viewGallery}>
+          <Pressable hitSlop={8} onPress={handleShare}>
             <Image
               source={require('../../assets/share.png')}
               style={attractionStyle.icon}

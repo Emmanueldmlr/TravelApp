@@ -1,6 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
       android:name=".MainApplication"
@@ -25,4 +26,12 @@
         android:name="com.google.android.geo.API_KEY"
         android:value="AIzaSyBUhiprOvAszMf1MC81PfI9UPU55RJy_lU"/>
     </application>
+
+    <queries>
+        <package android:name="com.example.store" />
+        <package android:name="com.example.services" />
+
+        <!--for example, to share via instagram -->
+        <package android:name="com.instagram.android" />
+    </queries>
 </manifest>
