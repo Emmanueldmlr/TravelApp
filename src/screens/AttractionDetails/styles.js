@@ -63,4 +63,16 @@ export const attractionStyle = StyleSheet.create({
     marginTop: 10,
   },
   map: {height: 300, width: '100%', marginTop: 20},
+  button: {
+    marginTop: 20,
+  },
+  buttonText: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#fff',
+    backgroundColor: '#4681A3',
+    padding: 20,
+    borderRadius: 20,
+    textAlign: 'center',
+  },
 });

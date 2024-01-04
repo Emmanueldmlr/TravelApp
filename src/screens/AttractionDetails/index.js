@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { SafeAreaView, ImageBackground, Image, View, Pressable, Text, ScrollView } from 'react-native';
+import { SafeAreaView, ImageBackground, Image, View, Pressable, Text, ScrollView, TouchableOpacity } from 'react-native';
 import InfoCard from '../../components/InfoCard.js';
 import { attractionStyle } from './styles';
 import MapView, {Marker} from 'react-native-maps';
@@ -65,6 +65,9 @@ ${attraction?.opening_time} - ${attraction?.closing_time}`}
       <MapView style={attractionStyle.map} initialRegion={coordinates}>
         <Marker coordinate={coordinates} title={attraction.name} />
       </MapView>
+      <TouchableOpacity style={attractionStyle.button} onPress={() => navigation.navigate('Map', {coordinates, name: attraction.name, country: attraction.country})}>
+        <Text style={attractionStyle.buttonText}>View on Map</Text>
+      </TouchableOpacity>
     </ScrollView>
   );
 };

@@ -1,10 +1,11 @@
 import React from 'react';
-import {Pressable, View} from 'react-native';
+import {Pressable, View, Image, Text} from 'react-native';
 import MapView, {Marker} from 'react-native-maps';
 import {mapStyles} from './styles';
 
 const Map = ({route, navigation}) => {
-  const {coordinates, name} = route?.coordinates || {};
+  const {coordinates, name, country} = route?.params || {};
+
   return (
     <View style={mapStyles.container}>
       <MapView style={mapStyles.map} initialRegion={coordinates}>
@@ -14,10 +15,11 @@ const Map = ({route, navigation}) => {
         <Pressable onPress={() => navigation.goBack()}>
           <Image source={require("../../assets/back.png")} style={mapStyles.icon}/>
         </Pressable>
-        <Text style={mapStyles.title}>{name}</Text>
+        <Text style={mapStyles.title}>{name}, {country}</Text>
       </View>
     </View>
   );
+  
 };
 
 export default Map;
