@@ -62,4 +62,5 @@ export const attractionStyle = StyleSheet.create({
     color: '#000',
     marginTop: 10,
   },
+  map: {height: 300, width: '100%', marginTop: 20},
 });
